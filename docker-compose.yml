@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: x-clone-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: x_app
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    platform: linux/amd64
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: x-clone-backend
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      JWT_SECRET: your_super_secret_key_change_this_in_production
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password123
+      DB_NAME: x_app
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    container_name: x-clone-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
