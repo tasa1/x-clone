@@ -24,7 +24,7 @@ const Timeline = () =>{
     const get =async() => {
         try{
             const token = localStorage.getItem("token")
-            const response = await fetch("http://localhost:3000/api/posts/get",{
+            const response = await fetch("https://x-clone-backend-en1v.onrender.com/api/posts/get",{
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`

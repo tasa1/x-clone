@@ -10,7 +10,7 @@ const Login = () => {
 
     const post = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/auth/login", {
+            const response = await fetch("https://x-clone-backend-en1v.onrender.com/api/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
