@@ -11,7 +11,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ミドルウェア
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://x-clone-peach-two.vercel.app" 
+  ]
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
