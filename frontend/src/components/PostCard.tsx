@@ -167,6 +167,7 @@ const PostCard = (props: Props) => {
             {post.replyToUsername && (
                 <p className="text-blue-400 text-xs mb-2">@{post.replyToUsername} への返信</p>
             )}
+            {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
             <div className="flex justify-between items-start">
                 <div>
                     <p className="font-bold text-gray-800">@{post.username}</p>

@@ -64,6 +64,7 @@ const Timeline = () =>{
                     ログアウト
                </button>
             </header>
+            {error && <p className="text-red-500 text-center mt-4">{error}</p>}
             <main className="max-w-xl mx-auto mt-4">
                 {posts.map((post) => (
                     <PostCard key={post.id} post={post} onPostUpdated={get} />
