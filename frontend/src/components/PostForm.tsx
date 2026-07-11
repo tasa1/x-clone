@@ -15,7 +15,7 @@ const PostForm = (props: Props) => {
 
     const post = async () => {
         try {
-            const response = await fetch("https://x-clone-backend-en1v.onrender.com/api/posts/post", {
+            const response = await fetch("https://x-clone-production-26bc.up.railway.app/api/posts/post", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const PostCard = (props: Props) => {
     //ライク処理
     const like = async () => {
         try {
-            const response = await fetch(`https://x-clone-backend-en1v.onrender.com/api/posts/${post.id}/like`, {
+            const response = await fetch(`https://x-clone-production-26bc.up.railway.app/api/posts/${post.id}/like`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const PostCard = (props: Props) => {
     //リポスト処理
     const repost = async () => {
         try {
-            const response = await fetch(`https://x-clone-backend-en1v.onrender.com/api/posts/${post.id}/repost`, {
+            const response = await fetch(`https://x-clone-production-26bc.up.railway.app/api/posts/${post.id}/repost`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const PostCard = (props: Props) => {
     //削除処理
     const dele = async () => {
         try {
-            const response = await fetch(`https://x-clone-backend-en1v.onrender.com/api/posts/${post.id}`, {
+            const response = await fetch(`https://x-clone-production-26bc.up.railway.app/api/posts/${post.id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -112,7 +112,7 @@ const PostCard = (props: Props) => {
     //リプライ処理
     const reply = async () => {
         try {
-            const response = await fetch(`https://x-clone-backend-en1v.onrender.com/api/posts/${post.id}/reply`, {
+            const response = await fetch(`https://x-clone-production-26bc.up.railway.app/api/posts/${post.id}/reply`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -141,7 +141,7 @@ const PostCard = (props: Props) => {
         if (!isReplyOpen) {
             try {
                 const response = await fetch(
-                    `https://x-clone-backend-en1v.onrender.com/api/posts/${post.id}/replies`,
+                    `https://x-clone-production-26bc.up.railway.app/api/posts/${post.id}/replies`,
                     {
                         headers: {
                             "Authorization": `Bearer ${token}`

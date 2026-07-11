@@ -14,7 +14,7 @@ const Register = () =>{
 
     const post = async () => {
         try{
-            const response = await fetch("https://x-clone-backend-en1v.onrender.com/api/auth/register",{
+            const response = await fetch("https://x-clone-production-26bc.up.railway.app/api/auth/register",{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json"
